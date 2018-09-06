@@ -38,5 +38,11 @@ let front_end_posts = [
 ];
 
 (function insertBlogs() {
-
+	var postList = document.getElementsByClassName("post-list")[0];
+	for (let i = 0; i < front_end_posts.length; i++) {
+		let post = document.createElement('li');
+		post.className = "list-group-item"
+		post.innerHTML='<a href= "' + front_end_posts[i]['url'] + '" class="float-left card-link">' + front_end_posts[i]['name'] + '</a><a class="float-right align-middle small ">' + front_end_posts[i]['date'] + '</span>';
+		postList.appendChild(post);
+	}
 }());
